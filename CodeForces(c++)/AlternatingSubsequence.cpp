@@ -1,14 +1,15 @@
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+#define fastio                \
+ios::sync_with_stdio(false);  \
+cin.tie(0);                   \
+cout.tie(0);
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-
+    fastio;
+    
     int t;
     cin >> t;
 
@@ -25,7 +26,7 @@ int main()
 
         if (n == 1)
         {
-            cout << e << endl;
+            cout << e << "\n";
         }
 
         else
@@ -63,7 +64,7 @@ int main()
                     r = r + vec.at(0);
                 }
             }
-            cout << r << endl;
+            cout << r << "\n";
         }
     }
     return 0;
