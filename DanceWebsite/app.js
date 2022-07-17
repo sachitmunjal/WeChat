@@ -4,7 +4,7 @@ const app = express();
 
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');           // SEE FUNCTION OF BODY-PARSER
-mongoose.connect('mongodb://localhost/contactDance',{useNewUrlParser:true,useUnifiedTopology: true });
+mongoose.connect('process.env.MONGODB_URI || mongodb://localhost/contactDance',{useNewUrlParser:true,useUnifiedTopology: true });
 const port=process.env.PORT || 8000;
 
 // app.use(express.static('static', options))         //doubt
