@@ -1,8 +1,18 @@
 
 // this file is node server which will handle socket io connection
 
-const io = require('socket.io')(8000)                           // we are using 8000 port
+const express = require('express');
+const app = express();
 
+const server = app.listen(8000, () => {
+    console.log('Server listening on port 8000...');
+});
+
+// Serve static files from the public directory
+app.use(express.static('../public'));
+
+
+const io = require('socket.io')(server)                           // we are using 8000 port
 const users = {};
 
 io.on('connection', socket=>{                                   // jaise hi connection aayega socket me, then this arrow function will be executed
